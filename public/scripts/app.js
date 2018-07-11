@@ -1,33 +1,40 @@
-"use strict";
+'use strict';
 
 console.log("app.js is running ...");
 
+// create app object title/subtitle
+// use title/subtitle in the template
+// render template
+var app = {
+	title: 'Indecision App',
+	subtitle: 'Put your life in the hands of a computer'
+};
 // jsx - javascript xml
 var template = React.createElement(
-	"div",
+	'div',
 	null,
 	React.createElement(
-		"h1",
+		'h1',
 		null,
-		"Indecision App"
+		app.title
 	),
 	React.createElement(
-		"p",
+		'p',
 		null,
-		"This is some info"
+		app.subtitle
 	),
 	React.createElement(
-		"ol",
+		'ol',
 		null,
 		React.createElement(
-			"li",
+			'li',
 			null,
-			"Item one"
+			'Item one'
 		),
 		React.createElement(
-			"li",
+			'li',
 			null,
-			"Item two"
+			'Item two'
 		)
 	)
 );
@@ -38,27 +45,36 @@ var template = React.createElement(
 //		p -> Age: 27 ...
 //		p -> Location: Guadalajara Jal
 // Render TemplateTwo instead of template
-
+var user = {
+	name: 'Vicente Noriega',
+	age: 27,
+	location: 'Guadalajara Jalisco, México'
+};
+// var userName = 'Vicente Noriega';
+// var userAge = 27;
+// var userLocation = 'Guadalajara Jalisco, México.';
 var templateTwo = React.createElement(
-	"div",
+	'div',
 	null,
 	React.createElement(
-		"h1",
+		'h1',
 		null,
-		"Vicente Noriega"
+		user.name
 	),
 	React.createElement(
-		"p",
+		'p',
 		null,
-		"Age: 27"
+		'Age: ',
+		user.age
 	),
 	React.createElement(
-		"p",
+		'p',
 		null,
-		"Location: Guadalajara Jalisco, M\xE9xico"
+		'Location: ',
+		user.location
 	)
 );
 
 var appRoute = document.getElementById("app");
 
-ReactDOM.render(templateTwo, appRoute);
+ReactDOM.render(template, appRoute);
