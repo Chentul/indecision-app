@@ -1,0 +1,6 @@
+SE 3: Hello React
+	7. Setting up a Web Server
+		* yarn global add live-server (install live-server globaly)
+		** npm install -g live-server (if not work the last command with yarn we can use this one)
+		* live-server -v (check if live-server is installed)
+		* live-server public (raise up the server "public it's the folder")
