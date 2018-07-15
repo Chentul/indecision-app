@@ -2,19 +2,12 @@
 
 console.log("app.js is running ...");
 
-// if statement
-// ternary operators
-// logical and operator
-
-// only render the subtitle (and p tag) if subtitle exist - logical and operator
-// render new p tag - if options.length > 0 "Here are your options" : "No options"
-
 var app = {
 	title: 'Indecision App',
 	subtitle: 'Put your life in the hands of a computer',
 	options: ['One', 'Two']
 };
-// jsx - javascript xml
+
 var template = React.createElement(
 	'div',
 	null,
@@ -49,43 +42,51 @@ var template = React.createElement(
 	)
 );
 
-// Create a templateTwo var JSX expression
-//	div
-//		h1 -> Your name
-//		p -> Age: 27 ...
-//		p -> Location: Guadalajara Jal
-// Render TemplateTwo instead of template
-var user = {
-	name: 'Vicente Noriega',
-	age: 27,
-	location: 'Guadalajara Jalisco, México'
+// Challenge
+// Make button "-1" - setup minusOne function and register - log "minusOne"
+// Make reset button "reset" - setup reset function - log "reset"
+
+var count = 0;
+
+var addOne = function addOne() {
+	console.log(++count);
 };
-function getLocation(location) {
-	if (location) return React.createElement(
-		'p',
-		null,
-		'Location: ',
-		location
-	);
-	return undefined;
-}
+
+var minusOne = function minusOne() {
+	console.log(--count);
+};
+
+var reset = function reset() {
+	count = 0;
+	console.log(count);
+};
+
 var templateTwo = React.createElement(
 	'div',
 	null,
 	React.createElement(
 		'h1',
 		null,
-		user.name ? user.name : 'Anonymous'
+		'Count: ',
+		count
 	),
-	user.age && user.age >= 18 && React.createElement(
-		'p',
-		null,
-		'Age: ',
-		user.age
+	React.createElement(
+		'button',
+		{ onClick: addOne },
+		'+1'
 	),
-	getLocation(user.location)
+	React.createElement(
+		'button',
+		{ onClick: minusOne },
+		'-1'
+	),
+	React.createElement(
+		'button',
+		{ onClick: reset },
+		'reset'
+	)
 );
 
 var appRoute = document.getElementById("app");
 
-ReactDOM.render(template, appRoute);
+ReactDOM.render(templateTwo, appRoute);
