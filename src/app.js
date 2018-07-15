@@ -18,34 +18,37 @@ const template = (
 	</div>
 );
 
-// Challenge
-// Make button "-1" - setup minusOne function and register - log "minusOne"
-// Make reset button "reset" - setup reset function - log "reset"
-
 let count = 0;
 
 const addOne = () => {
-	console.log(++count);
+	++count;
+	renderCounterApp();
 };
 
 const minusOne = () => {
-	console.log(--count);
+	--count;
+	renderCounterApp();
 };
 
 const reset = () => {
 	count = 0;
-	console.log(count);
+	renderCounterApp();
 };
-
-const templateTwo = (
-	<div>
-		<h1>Count: {count}</h1>
-		<button onClick={addOne}>+1</button>
-		<button onClick={minusOne}>-1</button>
-		<button onClick={reset}>reset</button>
-	</div>
-);
 
 const appRoute = document.getElementById("app");
 
-ReactDOM.render(templateTwo, appRoute);
+const renderCounterApp = () => {
+	
+	const templateTwo = (
+		<div>
+			<h1>Count: {count}</h1>
+			<button onClick={addOne}>+1</button>
+			<button onClick={minusOne}>-1</button>
+			<button onClick={reset}>reset</button>
+		</div>
+	);
+	
+	ReactDOM.render(templateTwo, appRoute);
+};
+
+renderCounterApp();

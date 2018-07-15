@@ -42,51 +42,54 @@ var template = React.createElement(
 	)
 );
 
-// Challenge
-// Make button "-1" - setup minusOne function and register - log "minusOne"
-// Make reset button "reset" - setup reset function - log "reset"
-
 var count = 0;
 
 var addOne = function addOne() {
-	console.log(++count);
+	++count;
+	renderCounterApp();
 };
 
 var minusOne = function minusOne() {
-	console.log(--count);
+	--count;
+	renderCounterApp();
 };
 
 var reset = function reset() {
 	count = 0;
-	console.log(count);
+	renderCounterApp();
 };
-
-var templateTwo = React.createElement(
-	'div',
-	null,
-	React.createElement(
-		'h1',
-		null,
-		'Count: ',
-		count
-	),
-	React.createElement(
-		'button',
-		{ onClick: addOne },
-		'+1'
-	),
-	React.createElement(
-		'button',
-		{ onClick: minusOne },
-		'-1'
-	),
-	React.createElement(
-		'button',
-		{ onClick: reset },
-		'reset'
-	)
-);
 
 var appRoute = document.getElementById("app");
 
-ReactDOM.render(templateTwo, appRoute);
+var renderCounterApp = function renderCounterApp() {
+
+	var templateTwo = React.createElement(
+		'div',
+		null,
+		React.createElement(
+			'h1',
+			null,
+			'Count: ',
+			count
+		),
+		React.createElement(
+			'button',
+			{ onClick: addOne },
+			'+1'
+		),
+		React.createElement(
+			'button',
+			{ onClick: minusOne },
+			'-1'
+		),
+		React.createElement(
+			'button',
+			{ onClick: reset },
+			'reset'
+		)
+	);
+
+	ReactDOM.render(templateTwo, appRoute);
+};
+
+renderCounterApp();
