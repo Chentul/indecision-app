@@ -4,6 +4,7 @@ SE 3: Hello React
 		** npm install -g live-server (if not work the last command with yarn we can use this one)
 		* live-server -v (check if live-server is installed)
 		* live-server public (raise up the server "public it's the folder")
+		* live-server public -p 8000 (other option to run the server with different port)
 	
 	9. Setting up Babel
 		* yarn global add babel-cli@6.24.1 (install the dependency babel)

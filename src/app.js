@@ -9,6 +9,23 @@ class IndecisionApp extends React.Component {
 			options : props.options
 		};
 	}
+	componentDidMount() {
+		console.log('componentDidMount');
+	}
+	componentDidUpdate(prevProps, prevState) {
+		console.log('componentDidUpdate');
+		console.log(prevProps);
+		console.log(prevState);
+		console.log('the propuse of using this method is for saving data ...')
+
+	}
+	componentWillUnmount() {
+		// this method appear when the component it's unmounted
+		// try it on console of your browser
+		// ReactDOM.render(React.createElement('p'), document.getElementById('p'));
+		console.log('componentWillUnmount');
+		console.log('the propuse of using this method is for fetching data ...')
+	}
 	handleDeleteOptions() {
 		this.setState(() => ({ options: [] }));
 	}
@@ -57,6 +74,7 @@ IndecisionApp.defaultProps = {
 	options : []
 };
 
+// this kind of component doesn't have the methods of the lyfecycle of react, but are more fast
 const Header = (props) => {
 	return (
 		<div>

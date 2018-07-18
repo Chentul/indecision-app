@@ -27,6 +27,28 @@ var IndecisionApp = function (_React$Component) {
 	}
 
 	_createClass(IndecisionApp, [{
+		key: 'componentDidMount',
+		value: function componentDidMount() {
+			console.log('componentDidMount');
+		}
+	}, {
+		key: 'componentDidUpdate',
+		value: function componentDidUpdate(prevProps, prevState) {
+			console.log('componentDidUpdate');
+			console.log(prevProps);
+			console.log(prevState);
+			console.log('the propuse of using this method is for saving data ...');
+		}
+	}, {
+		key: 'componentWillUnmount',
+		value: function componentWillUnmount() {
+			// this method appear when the component it's unmounted
+			// try it on console of your browser
+			// ReactDOM.render(React.createElement('p'), document.getElementById('p'));
+			console.log('componentWillUnmount');
+			console.log('the propuse of using this method is for fetching data ...');
+		}
+	}, {
 		key: 'handleDeleteOptions',
 		value: function handleDeleteOptions() {
 			this.setState(function () {
@@ -92,6 +114,7 @@ IndecisionApp.defaultProps = {
 	options: []
 };
 
+// this kind of component doesn't have the methods of the lyfecycle of react, but are more fast
 var Header = function Header(props) {
 	return React.createElement(
 		'div',
