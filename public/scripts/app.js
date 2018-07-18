@@ -21,7 +21,7 @@ var IndecisionApp = function (_React$Component) {
 		_this.handleAddOption = _this.handleAddOption.bind(_this);
 		_this.handleDeleteOption = _this.handleDeleteOption.bind(_this);
 		_this.state = {
-			options: props.options
+			options: []
 		};
 		return _this;
 	}
@@ -116,11 +116,9 @@ var IndecisionApp = function (_React$Component) {
 	return IndecisionApp;
 }(React.Component);
 
-IndecisionApp.defaultProps = {
-	options: []
-};
-
 // this kind of component doesn't have the methods of the lyfecycle of react, but are more fast
+
+
 var Header = function Header(props) {
 	return React.createElement(
 		'div',
