@@ -14,3 +14,9 @@ SE 3: Hello React
 		* yarn add babel-preset-react@6.24.1 babel-present-env@1.5.2 --save (install dependency)
 		* babel src/app.js --out-file=public/scripts/app.js --presets=env,react (compile jsx to js)
 		* babel src/app.js --out-file=public/scripts/app.js --presets=env,react --watch (watch the file and converted to js)
+
+SE6: Webpack
+	49. Avoid Global Modules
+		* sudo yarn global remove babel-cli live-server (delete all dependencies)
+		** sudo npm uninstall -g babel-cli live-server (delete all dependencies)
+		* yarn add live-server babel-cli@6.24.1
