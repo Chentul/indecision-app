@@ -10,21 +10,25 @@ class IndecisionApp extends React.Component {
 		};
 	}
 	componentDidMount() {
-		console.log('componentDidMount');
+		// fetch the information in the localStorage
+		try {
+			const json = localStorage.getItem('options');
+			const options = JSON.parse(json);
+			if(options)
+				this.setState(() => ({ options }));
+		} catch(e) {
+			// do nothing at all
+		}
 	}
 	componentDidUpdate(prevProps, prevState) {
-		console.log('componentDidUpdate');
-		console.log(prevProps);
-		console.log(prevState);
-		console.log('the propuse of using this method is for saving data ...')
-
+		// set the information on localStorage
+		if(prevState.options.length !== this.state.options.length) {
+			const json = JSON.stringify(this.state.options);
+			localStorage.setItem('options', json);
+		}
 	}
 	componentWillUnmount() {
-		// this method appear when the component it's unmounted
-		// try it on console of your browser
-		// ReactDOM.render(React.createElement('p'), document.getElementById('p'));
-		console.log('componentWillUnmount');
-		console.log('the propuse of using this method is for fetching data ...')
+		console.log('fetching data ...');
 	}
 	handleDeleteOptions() {
 		this.setState(() => ({ options: [] }));
@@ -105,6 +109,7 @@ const Options = (props) => {
 	return (
 		<div>
 			<button onClick={props.handleDeleteOptions}>Remove All</button>
+			{props.options.length === 0 && <p>Please add an option to get started!</p>}
 			{
 				props.options.map((option) => (
 					<Option
@@ -143,10 +148,15 @@ class AddOption extends React.Component {
 	}
 	handleAddOption( e ) {
 		e.preventDefault();		
+		
 		const option = e.target.elements.option.value.trim();
 		const error = this.props.handleAddOption(option);
-		e.target.elements.option.value = "";
+		
 		this.setState(() => ({error}));
+
+		 // clear the input
+		if(!error)
+			e.target.elements.option.value = "";
 	}
 	render() {
 		return (
