@@ -24,3 +24,7 @@ SE6: Webpack
 	50. Installing & Configuring Webpack
 		* yarn add webpack@3.1.0 (Install the dependency)
 		* node webpack.config.js (dump the file on terminal)
+
+53. Importing npm Modules
+	* yarn add validator@8.0.0 (A library of string validators and sanitizers.)
+	* yarn add react@15.6.1 react-dom@15.6.1 (install react)
