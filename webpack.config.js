@@ -7,6 +7,7 @@ module.exports = {
 		filename: 'bundle.js'
 	},
 	module: {
+		// everything that are out from /no_modules and has the .js extension, compile it on babel-loader
 		rules: [{
 			loader: 'babel-loader',
 			test: /\.js$/,
