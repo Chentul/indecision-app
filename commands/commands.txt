@@ -28,3 +28,7 @@ SE6: Webpack
 53. Importing npm Modules
 	* yarn add validator@8.0.0 (A library of string validators and sanitizers.)
 	* yarn add react@15.6.1 react-dom@15.6.1 (install react)
+
+54. Setting up Babel with Webpack
+	* yarn add babel-core@6.25.0 babel-loader@7.1.1
+	** the only commands that we need to run the app are: yarn run serve && build
