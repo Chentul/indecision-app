@@ -15,4 +15,7 @@ module.exports = {
 		}]
 	},
 	devtool: "cheap-module-eval-source-map", // only works on google chrome
+	devServer: { // set de devServer for webpack
+		contentBase: path.join(__dirname, 'public'),
+	}
 };
