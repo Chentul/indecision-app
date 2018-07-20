@@ -13,5 +13,6 @@ module.exports = {
 			test: /\.js$/,
 			exclude: /node_modules/
 		}]
-	}
+	},
+	devtool: "cheap-module-eval-source-map", // only works on google chrome
 };
