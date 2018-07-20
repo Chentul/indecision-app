@@ -5,9 +5,12 @@ import Options from './Options.js';
 import Header from './Header.js';
 import Action from './Action.js';
 
+import OptionModal from './OptionModal.js';
+
 export default class IndecisionApp extends React.Component {
 	state = {
-		options : []
+		options : [],
+		selectedOption: undefined
 	};
 	componentDidMount() {
 		try {
@@ -37,7 +40,10 @@ export default class IndecisionApp extends React.Component {
 	handlePick = () => {
 		const randomNum = Math.floor(Math.random() * this.state.options.length);
 		const option = this.state.options[randomNum];
-		console.log(option);
+		// create the option in the OptionModal
+		this.setState(() => ({
+			selectedOption: option
+		}));
 	}
 	handleAddOption = (option) => {
 		if(!option)
@@ -46,6 +52,11 @@ export default class IndecisionApp extends React.Component {
 			return 'This item already exists';
 		this.setState((prevState) => ({ options: prevState.options.concat(option) }));
 	}
+	handleClearSelectedOption = () => {
+		this.setState(() => ({
+			selectedOption: undefined
+		}));
+	} 
 	render() {
 		const subtitle = 'Put your life in the hands of a computer';
 		return (
@@ -64,6 +75,10 @@ export default class IndecisionApp extends React.Component {
 				/>
 				<AddOption 
 					handleAddOption={this.handleAddOption}
+				/>
+				<OptionModal 
+					selectedOption={this.state.selectedOption}
+					handleClearSelectedOption={this.handleClearSelectedOption}
 				/>
 			</div>
 		);

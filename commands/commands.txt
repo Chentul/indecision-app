@@ -38,3 +38,7 @@ SE6: Webpack
 
 	58. ES6 class properties
 		* yarn add babel-plugin-transform-class-properties@6.24.1 (allows you to create simple components binding methods automatically)
+
+SE7: Using a Third-Party Component
+	61. Setting up React-Modal (https://github.com/reactjs/react-modal)
+		* yarn add react-modal@2.2.2
