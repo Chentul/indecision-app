@@ -35,3 +35,6 @@ SE6: Webpack
 
 	57. Webpack Dev Server
 		* yarn add webpack-dev-server@2.5.1 (webserve like live-server but from webpack)
+
+	58. ES6 class properties
+		* yarn add babel-plugin-transform-class-properties@6.24.1 (allows you to create simple components binding methods automatically)
