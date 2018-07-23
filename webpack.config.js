@@ -12,10 +12,20 @@ module.exports = {
 			loader: 'babel-loader',
 			test: /\.js$/,
 			exclude: /node_modules/
+		},
+		{
+			test: /\.scss$/, 
+			use: [
+				'style-loader',
+				'css-loader',
+				'sass-loader'
+			]
 		}]
 	},
-	devtool: "cheap-module-eval-source-map", // only works on google chrome
-	devServer: { // set de devServer for webpack
+	// only works on google chrome
+	devtool: "cheap-module-eval-source-map", 
+	devServer: { 
+	// set de devServer for webpack
 		contentBase: path.join(__dirname, 'public'),
 	}
 };

@@ -42,3 +42,7 @@ SE6: Webpack
 SE7: Using a Third-Party Component
 	61. Setting up React-Modal (https://github.com/reactjs/react-modal)
 		* yarn add react-modal@2.2.2
+
+	64. Setting up Webpack with SCSS
+		* yarn add style-loader@0.18.2 css-loader@0.28.4 (https://www.npmjs.com/package/style-loader)
+		* yarn add sass-loader@6.0.6 node-sass@4.5.3 (add dependencies for sass)
