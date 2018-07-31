@@ -12,7 +12,7 @@
     "serve": "live-server public --port 8000",
     "build": "webpack --watch",
     "build-babel": "babel src/app.js --out-file=public/scripts/app.js --presets=env,react --watch",
-    "dev-server": "webpack-dev-server --port 8000"
+    "dev": "webpack-dev-server --port 9000"
   },
   "dependencies": {
     "babel-cli": "6.24.1",
