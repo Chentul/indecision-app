@@ -50,3 +50,7 @@ SE7: Using a Third-Party Component
 SE8: Styling React
 	66. Reset That $#!*
 		* yarn add normalize.css
+
+SE10: Redux
+	85. Setting up Redux
+		* yarn add redux@3.7.2
