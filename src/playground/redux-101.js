@@ -3,26 +3,56 @@ import { createStore } from 'redux';
 const store = createStore((state = {count: 0}, action) => {
 	switch(action.type) {
 		case 'INCREMENT':
-			return {count: state.count + 1};
+			const incrementBy = typeof action.incrementBy === 'number' ? action.incrementBy : 1;
+			return {
+				count: state.count + incrementBy
+			};
 		case 'DECREMENT':
-			return {count: state.count - 1};
+			const decrementBy = typeof action.decrementBy === 'number' ? action.decrementBy : 1;
+			return {
+				count: state.count - decrementBy
+			};
 		case 'RESET':
-			return {count: 0};
+			return {
+				count: 0
+			};
+
+		case 'SET':
+			return {
+				count: action.count
+			}
 		default:
 			return state;
 	}
 });
 
-console.log(store.getState());
+// this function watch all the changes on redux
+const unsubscribe = store.subscribe(() => console.log(store.getState()));
 
-// Actions - than an object that gets sent to the store
-// I'd like to increment, decrement and reset the count
-store.dispatch({type: 'INCREMENT'});
-console.log(store.getState());
+store.dispatch({
+		type: 'INCREMENT',
+		incrementBy: 5
+});
 
-store.dispatch({type: 'DECREMENT'});
-store.dispatch({type: 'DECREMENT'});
-console.log(store.getState());
+store.dispatch({
+	type: 'DECREMENT',
+	decrementBy: 10
+});
 
-store.dispatch({type: 'RESET'});
-console.log(store.getState());
+store.dispatch({
+	type: 'RESET'
+});
+
+store.dispatch({
+	type: 'DECREMENT',
+});
+
+store.dispatch({
+	type: 'DECREMENT',
+	decrementBy: 10
+});
+
+store.dispatch({
+	type: 'SET',
+	count: 101,
+});
