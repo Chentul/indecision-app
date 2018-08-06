@@ -56,3 +56,5 @@ SE10: Redux
 		* yarn add redux@3.7.2
 	93. ES6 Spread Operator in Reducers
 		* yarn add uuid@3.1.0 (dependency for create random unique id)
+	94. Spreading Objects
+		* yarn add babel-plugin-transform-object-rest-spread@6.23.0 (add a plugin into the project to spread objects)
